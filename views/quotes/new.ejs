@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h2>New Quote</h2>
+<select>
+<% books.forEach(function(b){ %> 
+<option><%= b.title %></option>
+<%}) %> 
+</select>
+<p> 
+    <form id="add-quote-form" action="/books/<%= bookId %>/quotes" method="POST">
+    <label>Quote</label>
+    <input type="text" name="Quote">
+    <label>Page Number</label>
+    <input type="number" name="Page-Number">
+    <br>
+    <button type="submit">Submit</button>
+    </form> 
+<%- include('../partials/footer') %>

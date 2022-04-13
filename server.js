@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
+
 // load the env consts
 require('dotenv').config();
 
@@ -17,10 +17,12 @@ const app = express();
 require('./config/database');
 // configure Passport
 require('./config/passport');
+const indexRoutes = require('./routes/index');
+const booksRoutes = require('./routes/books');
+const quotesRoutes = require('./routes/quotes');
 
 
-
-// view engine setup
+// view engiPne setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -49,7 +51,11 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
+app.use('/books', booksRoutes)// every route will start with books
 app.use('/', indexRoutes);
+app.use('/index', indexRoutes)
+app.use('/', quotesRoutes);// implementing m:m relationship
+
 
 
 // invalid request, send 404 page

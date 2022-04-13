@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<header>
+    <nav>
+        <div>
+            <a href="/books" id="all" class="nav-link"><span class="nav-link-span"><span class="u-nav">Book Shelf</span></span></a>
+            <a href="/books/new" id="new" class="nav-link active"><span class="nav-link-span"><span class="u-nav">New Book</span></span></a>
+        </div>
+    </nav>
+ </header>
+<main>
+    <div class="top"><h2>New Book</h2></div>
+        <div class="forms">
+         <form action="/books" method="POST">
+            <label>Book Title:</label>
+              <input type="text" name ="book-title">
+              <label>Author:</label>
+              <input type="text" name ="author">
+              <label>Genre:</label>
+              <input type="text" name ="Author">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+<%- include('../partials/footer') %> -->
