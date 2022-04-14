@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>Delete Quote</h2>
+<select>
+<% book.quotes.forEach(function(quote){ %> 
+    <div class="quote">
+        <% if (user && quote.userId.equals(user._id))  %> 
+<option><%= b.title %></option>
+<%}) %> 
+</select>
+<p> 
+    <form action="/quotes/<%= quote._id %>?_method=DELETE" method="POST">
+    <label>Quote</label>
+    <input type="text" name="Quote">
+    <label>Page Number</label>
+    <input type="number" name="Page-Number">
+    <br>
+    <button type="submit">Delete Comment </button>   
+    </form> 
+<%- include('../partials/footer') %>

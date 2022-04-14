@@ -16,7 +16,7 @@
     <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>>ALL BOOKS</a>
     <% if (user) { %>
       <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
-      <a href="/quotes/new" <%- title === 'Add Quote' ? 'class="active"' : '' %>>ADD QUOTE</a>
+      
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;< alt img src="https://i.imgur.com/FHjYyi0.png"></a>

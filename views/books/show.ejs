@@ -19,6 +19,7 @@
    <form action="/books/<%= book._id %>/quotes" method="POST">
     <h2>Favorite Quotes</h2>
     <div>Quote:</div>
+    <a href="/books/<%= book._id %>/quotes/new" <%- title === 'Add Quote' ? 'class="active"' : '' %>>ADD QUOTE</a>
    </form>
 </section>
 

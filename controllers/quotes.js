@@ -11,33 +11,33 @@ module.exports = {
 };
 
 function newQuote(req, res){
-    Quote.find({}, function(err, quotes){
+    // Book.find({}, function(err, quotes){
         res.render('quotes/new', {
             title: 'Add Quote',
-            quotes
+            bookId: req.params.id // passing key variable pairs
         });
-    });
 }
-
+//when you submit//
 function create(req, res) {
-    req.body.book = req.params.id
-    Quote.create(req.body, function(err, quotes){
-            quote.save(function(err){
-                res.redirect('/quotes');
-            });
+    // req.body.book = req.params.id
+    Book.findById(req.params.id, function(err, bookDocument){
+        Quote.create(req.body, function(err, quote){
+            console.log(err)
+                res.redirect('quotes/new');
             
         });
+        bookDocument.quote.push(req.body);
+        bookDocument.save(function(err){
+            res.redirect(`/books/${bookDocument._id}`);
+        });
+    });
+   
 
     }
 
 
     function addToBook(req, res){
-        Book.findById(req.params.id, function(err, bookDocument){
-            bookDocument.quote.push(req.body);
-            bookDocument.save(function(err){
-                res.redirect(`/books/${bookDocument._id}`);
-            });
-        });
+       
     }
 
 // function create (req, res,) {
