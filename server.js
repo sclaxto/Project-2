@@ -53,7 +53,6 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/books', booksRoutes)// every route will start with books
 app.use('/', indexRoutes);
-app.use('/index', indexRoutes)
 app.use('/', quotesRoutes);// implementing m:m relationship
 
 

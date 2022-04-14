@@ -3,11 +3,19 @@ const Schema = mongoose.Schema;
 // Create your User Model
 
 const bookSchema = new Schema({
-    author: {type: String, required: true, unique: true},
-    title: String, 
-    genre: Array
-    
-    
+    author: {type: String
+    },
+    genre: {
+        type: String,
+        required: true
+    }, 
+    title: {
+        type: String, 
+        required: true
+    },
+    userId: {type: Schema.Types.ObjectId, ref:"User"},
+    excerpt: [{type: Schema.Types.ObjectId, ref:"Quote"}]
+  
 });
 
 

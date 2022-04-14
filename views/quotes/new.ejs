@@ -1,18 +1,43 @@
 <%- include('../partials/header') %>
 
-<h2>New Quote</h2>
-<select>
-<% books.forEach(function(b){ %> 
-<option><%= b.title %></option>
-<%}) %> 
-</select>
+<div class="quote-top"></div><h2>New Quote</h2></div>
+<div class="forms"></div>
 <p> 
-    <form id="add-quote-form" action="/books/<%= bookId %>/quotes" method="POST">
-    <label>Quote</label>
-    <input type="text" name="Quote">
-    <label>Page Number</label>
-    <input type="number" name="Page-Number">
+    <form id="add-quote-form" action="/quotes/new" method="POST">
+    <label>Quote:</label>
+    <input type="text" name="quote">
+    <label>Page Number:</label>
+    <input type="number" name="page">
     <br>
-    <button type="submit">Submit</button>
+    <button type="submit">Submit</button>   
     </form> 
 <%- include('../partials/footer') %>
+
+
+
+
+<%- include('../partials/header') %>
+<header>
+    <nav>
+        <div>
+            <a href="/books" id="all" class="nav-link"><span class="nav-link-span"><span class="u-nav">Book Shelf</span></span></a>
+            <a href="/books/new" id="new" class="nav-link active"><span class="nav-link-span"><span class="u-nav">New Book</span></span></a>
+        </div>
+    </nav>
+ </header>
+<main>
+    <div class="top"><h2>New Book</h2></div>
+        <div class="forms">
+         <form action="/books" method="POST">
+            <label>Book Title:</label>
+              <input type="text" name ="title">
+              <label>Author:</label>
+              <input type="text" name ="author">
+              <label>Genre:</label>
+              <input type="text" name ="genre">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+<%- include('../partials/footer') %> -->

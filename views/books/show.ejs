@@ -1,24 +1,35 @@
-<%- include('../partials/header') %>
+ <%- include('../partials/header') %> 
+<!-- BOOK DETAILS PAGE-->
 <!-- Books sections, should display Title and Author of book-->
-<section id="show-page">
-    <section>
-        <h2>Books</h2>
-        <div>Title:</div>
-        <div><%= book.title %> </div>
-        <div>Author:</div>
-        <div><%= book.author %> </div>
-    </section>
-</section>
+<html>
+    <body>
+        <main>
+                <section id="details-page">
+                    <h2>Books</h2>
+                    <div>Title:</div>
+                    <div><%= book.title %> </div>
+                    <div>Author:</div>
+                    <div><%= book.author %> </div>
+                    <div>Genre:</div>
+                    <div><%= book.genre %> </div>
+                </section>
+
 <!-- Quotes section, should display all quotes associated with book-->
-<br>
-<section>
+<section> 
+   <form action="/books/<%= book._id %>/quotes" method="POST">
     <h2>Favorite Quotes</h2>
     <div>Quote:</div>
-    <div><%= quote.content %> </div>
-    
+   </form>
 </section>
 
 
 
-
-<%- include('../partials/footer') %> -->
+  <section>
+    <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
+      <button type="submit">DELETE</button>
+    </form>
+  </section>
+</main>
+</body>
+</html>
+<%- include('../partials/footer') %>

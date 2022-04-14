@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<h2>Edit <%=b.title%>></h2>
+<select>
+<% books.forEach(function(b){ %> 
+<option><%= b.title %></option>
+<%}) %> 
+</select>
+<p> 
+    <form id="edit-quote-form" action="/quotes/<%= quote._id %>?_method=PUT" method="POST">
+    <input name="text" value="<%= quote.text %> "
+    <button type="submit">Update Quote</button>   
+    </form> 
+<%- include('../partials/footer') %>
