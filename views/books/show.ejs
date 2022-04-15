@@ -17,32 +17,29 @@
 <!-- Quotes section, should display all quotes associated with book-->
 <section> 
    <form action="/books/<%= book._id %>/quotes" method="POST">
-    <h2>Favorite Quotes</h2>
-    <div>Quote:</div>
-    <ul>
-        <%- book.excerpt.map(q=>
-        `<li>${q.content}</li>`
-        ).join('') %>
-    </ul>
-    <a href="/books/<%= book._id %>/quotes/new" <%- title === 'Add Quote' ? 'class="active"' : '' %>>ADD QUOTE</a>
-    <a href="/books/<%= book._id %>/edit" <%- title === 'Edit' ? 'class="active"' : '' %>>EDIT BOOK</a>
-   </form>
+      <h2>Favorite Quotes</h2>
+        <div>Quote:</div>
+          <ul>
+              <%- book.excerpt.map(q=>
+              `<li>${q.content}</li>`
+              ).join('') %>
+          </ul>
+            <a href="/books/<%= book._id %>/quotes/new" <%- title === 'Add Quote' ? 'class="active"' : '' %>>ADD QUOTE</a>
+            <a href="/books/<%= book._id %>/edit" <%- title === 'Edit' ? 'class="active"' : '' %>>EDIT BOOK</a>
+  </form>
 </section>
 
-
-
-  <section>
-    <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
-      <button type="submit">DELETE</button>
-    </form>
-    <br>
-    <section>
-      
-        </form>
-      </section>
-  </section>
-</main>
-</body>
+      <section>
+            <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
+                  <button type="submit">DELETE</button>
+                      </form>
+                      <br>
+                      <section>
+                    </form>
+              </section>
+        </section>
+    </main>
+  </body>
 </html>
 <%- include('../partials/footer') %>
 

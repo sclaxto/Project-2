@@ -1,16 +1,16 @@
 <%- include('../partials/header') %>
 
-<div class="quote-top"></div><h2>New Quote</h2></div>
-<div class="forms"></div>
-<p> 
-    <form id="add-quote-form" action="/books/<%= bookId %>/quotes" method="POST">
-    <label>Quote:</label>
-    <input type="text" name="content">
-    <label>Page Number:</label>
-    <input type="number" name="page">
-    <br>
-    <button type="submit">Submit</button>   
-    </form> 
+    <div class="quote-top"></div><h2>New Quote</h2></div>
+        <div class="forms"></div>
+            <p> 
+                <form id="add-quote-form" action="/books/<%= bookId %>/quotes" method="POST">
+                    <label>Quote:</label>
+                    <input type="text" name="content">
+                    <label>Page Number:</label>
+                    <input type="number" name="page">
+                    <br>
+                <button type="submit">Submit</button>   
+        </form> 
 <%- include('../partials/footer') %>
 
 

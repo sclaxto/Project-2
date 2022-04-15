@@ -26,38 +26,39 @@ nav {
 body { /* login page */
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #787a7a;
+  background-color: #cacaca;
   
 }
 
 a { /* login button*/
-  color: #00B7FF;
+  color: #3FC40E;
   display: grid;
   justify-items: center;
-  background-color: white;
+  
 }
 
 * { /*quotespiration*/
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: #424845;/*Text Color*/
+  text-align: center;
 }
 
 body {
   margin: 0;
   height: 100vh;
-  display: grid;
   grid-template-rows: 50px 1fr;
   justify-items: center;
 }
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #A19F9F;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+  border-radius: 15px;
 }
 
 nav > img {
@@ -187,4 +188,10 @@ li {
 
 nav {
   background-color: #B8C0C2;
+}
+
+h1 {
+  display: grid;
+  justify-content: center;
+  color: #3FC40E;
 }

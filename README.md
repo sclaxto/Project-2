@@ -16,3 +16,7 @@
 - Allowing users to have the optio to make quotes public 
 - Creating a phone app
 - Updating UI
+
+### View Website
+##### [Website link:](https://quotespiration.herokuapp.com/)
+

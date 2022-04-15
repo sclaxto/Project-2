@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  </title>
-
-</head>
-<body>
-  <nav>
-      
-    <alt img src="/images/camera.svg">
-    <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>>ALL BOOKS</a>
-    <% if (user) { %>
-      <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
-      
-      <a href="/logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<alt img src="https://i.imgur.com/p7dJPVJ.png" style="width: 153px;" ></a>
-    <% } %>
-  </nav>
-  <main>
-    <h1><%= title %></h1>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        </title>
+    </head>
+      <body>
+          <nav> 
+                <alt img src="/images/camera.svg">
+                  <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>>ALL BOOKS</a>
+                    <% if (user) { %>
+                      <a href="/books/new" <%- title === 'Add Book' ? 'class="active"' : '' %>>ADD BOOK</a>
+                      
+                      <a href="/logout">LOG OUT</a>
+                    <% } else { %>
+                      <a href="/auth/google" class="login">LOG IN&nbsp;<alt img src="https://i.imgur.com/p7dJPVJ.png" style="width: 153px;" ></alt></a>
+                    <% } %>
+            </nav>
+          <main>
+        <h1><%= title %></h1>
