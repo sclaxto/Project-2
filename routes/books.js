@@ -9,6 +9,8 @@ router.get('/new', isLoggedIn, booksCtrl.new);
 router.get('/:id', booksCtrl.show);
 router.post('/', booksCtrl.create);
 router.delete('/:id', booksCtrl.delete);
+router.get('/:id/edit', booksCtrl.edit);
+router.put('/:id', booksCtrl.update);
 
 // function isLoggedIn(req, res, next) {
 //     if (req.isAuthenticated()) return next();

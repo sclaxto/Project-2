@@ -1,0 +1,33 @@
+<html>
+<header>
+    <nav>
+        <div>
+            <a href="/books" id="all" class="nav-link"><span class="nav-link-span"><span class="u-nav">Book Shelf</span></span></a>
+            <a href="/books/new" id="new" class="nav-link active"><span class="nav-link-span"><span class="u-nav">New Book</span></span></a>
+        </div>
+    </nav>
+ </header>
+    <body>
+        <main>
+                <section id="details-page">
+                    <form action="/books/<%=book._id%>?_method=PUT" method="POST">
+                    <h2>Books</h2>
+                    <div>Title:</div>
+                    <div><%= book.title %> </div>
+                    <input name="title" value=title>
+                    <br>
+                    <div>Author:</div>
+                    <div><%= book.author %> </div>
+                    <input name="author" value=author>
+                    <br>
+                    <div>Genre:</div>
+                    <div><%= book.genre %> </div>
+                    <input name="genre" value=genre>
+                    <br>
+                     <button type="submit">UPDATE</button>
+                    </form>
+                </section>
+            </main>
+    </body>
+</html>
+

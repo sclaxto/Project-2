@@ -8,14 +8,15 @@ module.exports = {
      show,
      allBooks,
      create,
-     delete: deleteBook
+     delete: deleteBook,
+     update,
+     edit
     
 };
 
 function index(req, res) {
-    console.log(req.user, '<-- req.user')
     Book.find({}, function (err, books) {
-        console.log(req.book, '<-- req.book')
+        console.log(books, '<-- rbook')
         res.render('books/index', {
         books,
         title: "Book Shelf",
@@ -23,15 +24,15 @@ function index(req, res) {
     });
 }
 
-
+// create and show quotes
 function show(req, res){
-    Book.findById(req.params.id, function(err, book){
+    Book.findById(req.params.id).populate('excerpt').exec( function(err, book){
         console.log(book)
     res.render('books/show',{ 
         book,
         title: book.title
-    })
-    })
+    });
+    });
     
 }
 
@@ -68,4 +69,18 @@ function deleteBook(req, res) {
 Book.findByIdAndDelete(req.params.id, (err)=>{
     res.redirect('/books')
 })
+}
+
+function edit(req, res){
+    Book.findOne({_id: req.params.id}, function(err, book){
+        if(err || !book) return res.redirect('/books');
+        res.render('books/edit', {book});
+    });
+}
+
+ 
+function update(req, res) {
+Book.findByIdAndUpdate(req.params.id,{title: req.body.title, author: req.body.author, genre: req.body.genre}, function(){
+    res.redirect('/books')
+});
 }

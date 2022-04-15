@@ -6,8 +6,7 @@ const Quote = require('../models/quote');
 module.exports = {
     new: newQuote,
     create,
-    addToBook,
-    update
+    show
 };
 
 function newQuote(req, res){
@@ -23,23 +22,22 @@ function create(req, res) {
     Book.findById(req.params.id, function(err, bookDocument){
         Quote.create(req.body, function(err, quote){
             console.log(err)
-                res.redirect('quotes/new');
-            
-        });
-        bookDocument.quote.push(req.body);
+            bookDocument.excerpt.push(quote._id);
         bookDocument.save(function(err){
             res.redirect(`/books/${bookDocument._id}`);
         });
+        });
     });
-   
-
     }
 
 
-    function addToBook(req, res){
-       
+    function show(req, res){ 
+    Quote.findById(req.params.id)
+    .populate('excerpt')
+    .exec(function(err, quote){
+        console.log(quote, "<---this is the quote")
+    })
     }
-
 // function create (req, res,) {
 //     Book.findById(req.params.id, function (err, bookAddedToDatabase){
 //         req.body.user = req.user._id;
@@ -51,14 +49,4 @@ function create(req, res) {
 //       });
 //     });
 // }
- 
-function update(req, res) {
-    Book.findOne({'quotes._id': req.params.id}, function(err, book) {
-    const  commentSubdoc = book.comments.id(req.params.id);
-    if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/books/${book._id}`);
-    commentSubdoc.text = req.body.text;
-    book.save(function(err){
-        res.redirect(`/books/${book._id}`);
-    });
-});
-}
+
