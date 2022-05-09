@@ -13,7 +13,7 @@
 
 ### Technologies Used:
 - JavaScript
-- Monogodb
+- Mongodb
 - Mongoose
 - Express 
 - Node.js
