@@ -1,6 +1,6 @@
 # Project 2 - Quotespiration
 
-#### A web page created for readers who love notating quotes. The aim of this app is to provide a space for users to keep a digital track of their book quotes.   
+#### A web app created for readers who love notating quotes. The aim of this app is to provide a space for users to keep a digital track of their book quotes.   
 
 
 ### View Website
